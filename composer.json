@@ -1,0 +1,22 @@
+{
+    "name":        "yohang/dependency-tools",
+    "description": "A simple Composer script to install NPM and/or Bower dependencies",
+    "keywords":    ["dependency", "bower", "npm", "composer"],
+    "homepage":    "https://github.com/yohang/dependency-tools",
+    "type":        "library",
+    "license":     "MIT",
+    "authors": [
+        {
+            "name":     "Yohan Giarelli",
+            "email":    "yohan@giarel.li",
+            "homepage": "http://yohan.giarel.li"
+        }
+    ],
+    "require": {
+        "php":             ">=5.3.0",
+        "symfony/process": ">=2.0,<2.3-dev"
+    },
+    "autoload": {
+        "psr-0": { "Yohang": "src/" }
+    }
+}
