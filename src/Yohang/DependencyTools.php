@@ -18,13 +18,23 @@ class DependencyTools
     public static function installDeps($event)
     {
         $options = static::getOptions($event);
-        if ($options['npm']) {
+        if (false !== $options['npm']) {
             echo "Installing NPM dependencies\n";
-            static::execCommand(array('npm', 'install'), 'An error occuring when installing NPM dependencies');
+            static::execCommand(
+                $options['npm'],
+                'npm',
+                array('install'),
+                'An error occuring when installing NPM dependencies'
+            );
         }
-        if ($options['bower']) {
+        if (false !== $options['bower']) {
             echo "Installing Bower dependencies\n";
-            static::execCommand(array('bower', 'install'), 'An error occuring when installing Bower dependencies');
+            static::execCommand(
+                $options['bower'],
+                'bower',
+                array('install'),
+                'An error occuring when installing Bower dependencies'
+            );
         }
     }
 
@@ -51,10 +61,14 @@ class DependencyTools
      * @param string $ifError
      * @throws \RuntimeException
      */
-    protected static function execCommand($args, $ifError)
+    protected static function execCommand($options, $cmd, array $args, $ifError)
     {
+        if (is_array($options) && isset($options['path'])) {
+            $cmd = $options['path'];
+        }
+
         $out = '';
-        $process = ProcessBuilder::create($args)->getProcess();
+        $process = ProcessBuilder::create(array_merge(array($cmd), $args))->getProcess();
         $process->run(function($type, $buffer) use (&$out) { $out .= $buffer; });
 
         if (!$process->isSuccessful()) {
