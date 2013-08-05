@@ -18,5 +18,8 @@
     },
     "autoload": {
         "psr-0": { "Yohang": "src/" }
+    },
+    "branch-alias": {
+        "dev-master": "1.1.*-dev"
     }
 }

@@ -57,8 +57,11 @@ class DependencyTools
     }
 
     /**
-     * @param arrat  $args
+     * @param array  $options
+     * @param string $cmd
+     * @param array  $args
      * @param string $ifError
+     *
      * @throws \RuntimeException
      */
     protected static function execCommand($options, $cmd, array $args, $ifError)
@@ -69,6 +72,9 @@ class DependencyTools
 
         $out = '';
         $process = ProcessBuilder::create(array_merge(array($cmd), $args))->getProcess();
+        if (isset($options['timeout'])) {
+            $process->setTimeout($options['timeout']);
+        }
         $process->run(function($type, $buffer) use (&$out) { $out .= $buffer; });
 
         if (!$process->isSuccessful()) {
