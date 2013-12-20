@@ -3,6 +3,7 @@
 namespace Yohang;
 
 use Symfony\Component\Process\ProcessBuilder;
+use Symfony\Component\Process\ExecutableFinder;
 
 /**
  * Simple static class that installs non-composer dependencies
@@ -65,6 +66,9 @@ class DependencyTools
     {
         if (is_array($options) && isset($options['path'])) {
             $cmd = $options['path'];
+        } else {
+            $executableFinder = new ExecutableFinder;
+            $cmd = $executableFinder->find($cmd);
         }
 
         $out = '';
