@@ -19,7 +19,7 @@ Add this lines to your composer.json file (only works with root file) :
             "Yohang\\DependencyTools::installDeps"
         ],
         "post-update-cmd": [
-            "Yohang\\DependencyTools::installDeps"
+            "Yohang\\DependencyTools::updateDeps"
         ]
     },
     "extra": {
