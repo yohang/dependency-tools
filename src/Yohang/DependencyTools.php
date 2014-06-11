@@ -10,6 +10,7 @@ use Composer\Script\Event;
  * Simple static class that installs non-composer dependencies
  *
  * @author Yohan Giarelli <yohan@frequence-web.fr>
+ * @author Maxime Veber <nek.dev@gmail.com>
  */
 class DependencyTools
 {
@@ -32,8 +33,8 @@ class DependencyTools
     }
 
     /**
-     * @param Event $event
-     * @param string type
+     * @param Event  $event
+     * @param string $type
      * @throws \RuntimeException
      */
     protected static function setup(Event $event, $type)

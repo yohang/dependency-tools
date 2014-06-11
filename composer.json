@@ -1,8 +1,8 @@
 {
-    "name":        "yohang/dependency-tools",
+    "name":        "nekland/dependency-tools",
     "description": "A simple Composer script to install NPM and/or Bower dependencies",
     "keywords":    ["dependency", "bower", "npm", "composer"],
-    "homepage":    "https://github.com/yohang/dependency-tools",
+    "homepage":    "https://github.com/nekland/dependency-tools",
     "type":        "library",
     "license":     "MIT",
     "authors": [
@@ -10,11 +10,21 @@
             "name":     "Yohan Giarelli",
             "email":    "yohan@giarel.li",
             "homepage": "http://yohan.giarel.li"
+        },
+        {
+            "name":     "Maxime Veber",
+            "email":    "nek.dev@gmail.com",
+            "homepage": "http://nekland.fr"
         }
     ],
     "require": {
         "php":             ">=5.3.0",
         "symfony/process": ">=2.0,<3.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec":              "~2.0",
+        "phpspec/nyan-formatters":      "1.*",
+        "composer/composer":            "dev-master"
     },
     "autoload": {
         "psr-0": { "Yohang": "src/" }

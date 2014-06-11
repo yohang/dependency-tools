@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+before_script:
+    - cp phpspec.yml.dist phpspec.yml
+    - composer install
+
+script:
+    - bin/phpspec run --format nyan.cat

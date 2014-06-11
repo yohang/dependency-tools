@@ -3,6 +3,8 @@ Install NPM & Bower dependencies with Composer
 
 This simple tools allows you to run `npm install` and/or `bower install` each time you run composer install / update.
 
+*Note: This is Windows-compatible !*
+
 Usage
 -----
 
@@ -12,7 +14,7 @@ Add this lines to your composer.json file (only works with root file) :
 
 {
     "require": {
-        "yohang/dependency-tools": "1.0.*"
+        "yohang/dependency-tools": "1.1.*"
     },
     "scripts": {
         "post-install-cmd": [
