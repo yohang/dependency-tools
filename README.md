@@ -8,6 +8,8 @@ This simple tools allows you to run `npm install` and/or `bower install` each ti
 Usage
 -----
 
+### Basic usage
+
 Add this lines to your composer.json file (only works with root file) :
 
 ```json
@@ -35,3 +37,22 @@ Add this lines to your composer.json file (only works with root file) :
 ```
 
 And that's all, your NPM and Bower dependencies will be installed just after your Composer dependencies.
+
+### Advanced usage
+
+If you don't have a global install of bower, you would maybe like to specify a path to bower. If you uses npm to install
+bower directly in your project here is an example of how you can configure composer:
+
+```json
+{
+    "extra": {
+        "dependency-tools": {
+            "npm": true,
+            "bower": {
+                "path": "node_modules/.bin/bower"
+            }
+        }
+    }
+}
+```
+
