@@ -56,3 +56,11 @@ bower directly in your project here is an example of how you can configure compo
 }
 ```
 
+Known issue
+-----------
+
+Bower executable is searching for `node`, if you installed nodejs on ubuntu, the executable is `nodejs`, an easy fix is to execute the following command to make a shortcut named `node` to `nodejs`.
+
+```bash
+sudo ln -vs /usr/bin/nodejs /usr/bin/node
+```
